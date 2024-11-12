@@ -14,15 +14,15 @@ class MainActivity {
             override fun onResponse(call: Call<Endereco>, response: Response<Endereco>) {
                 if (response.isSuccessful) {
                     val endereco = response.body()
-                    onResult(endereco) // Chama a função de callback com o resultado
+                    onResult(endereco)
                 } else {
-                    onResult(null) // Chama com null se a resposta não for bem-sucedida
+                    onResult(null)
                 }
             }
 
             override fun onFailure(call: Call<Endereco>, t: Throwable) {
                 println("Erro na requisição: ${t.message}")
-                onResult(null) // Chama com null em caso de falha
+                onResult(null)
             }
         })
     }
